@@ -22,7 +22,7 @@
 		<tr>
 			<th>To Do Item</th>
 			<th>Email of Person Responsible</th>
-			<th>Priority Level </th>
+			<th>Priority Level</th>
 		</tr>
 		{% for item in to_do_list %}
 				<tr>
@@ -31,6 +31,7 @@
 					<td>{{item.Priority}}</td>
 					<td>
 						<form action="/delete" method="post">
+							<input type=hidden value="{{item.ToDoItem}}" name="delete">
 							<input type="submit" value="Delete">
 						</form>
 					</td>

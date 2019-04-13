@@ -1,0 +1,55 @@
+(lp0
+(dp1
+S'Priority'
+p2
+VHigh
+p3
+sS'ToDoItem'
+p4
+VFinish Homework
+p5
+sS'Email'
+p6
+Vdennis.awad83@spsmail.cuny.edu
+p7
+sa(dp8
+g2
+VHigh
+p9
+sg4
+VGet Delete To Work On This Site
+p10
+sg6
+Vdennis@yahoo.com
+p11
+sa(dp12
+g2
+VLow
+p13
+sg4
+VGet Milk
+p14
+sg6
+Vsomeone@email.com
+p15
+sa(dp16
+g2
+VHigh
+p17
+sg4
+VGet Money
+p18
+sg6
+Veveryone@intheworld.com
+p19
+sa(dp20
+g2
+VMedium
+p21
+sg4
+VSleep
+p22
+sg6
+Vehhh@sleepwhenidie.com
+p23
+sa.

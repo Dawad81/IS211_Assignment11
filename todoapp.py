@@ -58,6 +58,15 @@ def get_to_do_list():
         return to_do_list
 
 
+@app.route('/delete', methods=['POST'])
+def delete():
+    delete_todo_item = request.form['delete']
+    for item in to_do_list:
+        if item['ToDoItem'] == delete_todo_item:
+            to_do_list.remove(item)
+            return redirect('/')
+
+
 if __name__ == '__main__':
     to_do_list = get_to_do_list()
     app.run(debug=1)
