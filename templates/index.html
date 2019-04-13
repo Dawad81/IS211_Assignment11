@@ -14,13 +14,11 @@
 		  border: 3px solid black;
 		  border-collapse: collapse;
 		  }
-
-
 	  </style>
   </head>
 
   <body>
-    <h2>To Do List</h2>
+    <h1>To Do List</h1>
 	<table class="centered thick-border">
 		<tr>
                 <th>To Do Item</th>
@@ -29,9 +27,9 @@
         </tr>
 		{% for item in to_do_list %}
 				<tr>
-						<td>{{item.ToDoItem}}</td>
-						<td>{{item.Email}}</td>
-						<td>{{item.Priority}}</td>
+					<td>{{item.ToDoItem}}</td>
+					<td>{{item.Email}}</td>
+					<td>{{item.Priority}}</td>
 				</tr>
 		{% endfor %}
 	</table>
@@ -48,7 +46,11 @@
 		<input type="submit" value="Add To Do Item">
 	</form>
 	<form action="/clear" method="post">
-		<input type="submit" value="Clear"></input>
+		<input type="submit" value="Clear">
+	</form>
+	<form action="/save" method="post">
+		<input type="submit" value="Save">
 	</form>
   </body>
 </html>
+

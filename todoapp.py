@@ -4,13 +4,11 @@
 
 
 from flask import Flask, render_template, request, redirect
+import os
+import pickle
 import re
 
 app = Flask(__name__)
-
-to_do_list = [{'ToDoItem': 'Get Milk', 'Email': 'Dennis.Awad@email.com', 'Priority': 'High'},
-              {'ToDoItem': 'Get Pizza', 'Email': 'Nicole.Awad@email.com', 'Priority': 'Medium'},
-              {'ToDoItem': 'Get Soap', 'Email': 'Awad@email.com', 'Priority': 'Low'}]
 
 
 @app.route('/')
@@ -42,5 +40,24 @@ def clear():
     return redirect('/')
 
 
+@app.route('/save', methods=['POST'])
+def save():
+    to_pickle_file = open('to_do_list.pkl', 'wb')
+    pickle.dump(to_do_list, to_pickle_file)
+    to_pickle_file.close()
+    return redirect('/')
+
+
+def get_to_do_list():
+    from_pickle_file = 'to_do_list.pkl'
+    if os.path.exists(from_pickle_file):
+        to_do_list = pickle.load(open(from_pickle_file, 'rb'))
+        return to_do_list
+    else:
+        to_do_list = []
+        return to_do_list
+
+
 if __name__ == '__main__':
+    to_do_list = get_to_do_list()
     app.run(debug=1)
