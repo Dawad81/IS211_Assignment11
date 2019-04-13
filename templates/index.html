@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+	  <style type="text/css">
+		  .thick-border
+		  {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		  }
+
+		  td,th
+		  {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		  }
+
+
+	  </style>
+  </head>
+
+  <body>
+    <h2>To Do List</h2>
+	<table class="centered thick-border">
+		<tr>
+                <th>To Do Item</th>
+                <th>Email of Person Responsible</th>
+                <th>Priority Level </th>
+        </tr>
+		{% for item in to_do_list %}
+				<tr>
+						<td>{{item.ToDoItem}}</td>
+						<td>{{item.Email}}</td>
+						<td>{{item.Priority}}</td>
+				</tr>
+		{% endfor %}
+	</table>
+	<br>
+	<form action="/submit" method="post">
+		<input type="text" name="task" placeholder="Enter task To Do">
+		<input type="text" name="email" placeholder="Enter email of Person Responsible">
+		<select name="priority">
+			<option value="none"> Select A Priority Level</option>
+			<option value="High">High</option>
+			<option value="Medium">Medium</option>
+			<option value="Low">Low</option>
+		</select>
+		<input type="submit" value="Add To Do Item">
+	</form>
+	<form action="/clear" method="post">
+		<input type="submit" value="Clear"></input>
+	</form>
+  </body>
+</html>
