@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Docstring"""
+"""This modual creates a web framwork for a simple todo list."""
 
 
 from flask import Flask, render_template, request, redirect
